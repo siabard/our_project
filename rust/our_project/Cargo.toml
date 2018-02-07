@@ -3,4 +3,13 @@ name = "our_project"
 version = "0.1.0"
 authors = ["Yeonho Jang <siabard@gmail.com>"]
 
+[lib]
+name = "our_project"
+crate-type=["staticlib", "cdylib"]
+
 [dependencies]
+libc = "0.2"
+jni = {version = "0.5.1", optional = true, default-features = false}
+
+[features]
+default = ["jni"]
